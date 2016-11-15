@@ -10,7 +10,7 @@ module Spree
       payment_method = Spree::PaymentMethod.find(params[:payment_method_id])
       
       @service_url = payment_method.provider.service_url
-      @merchant_key = payment_method.preferred_merchant_id
+      @merchant_key = 'ngjY0BdZ'
 
       @txnid = payment_method.txnid(current_order)
       @amount = current_order.total.to_s
