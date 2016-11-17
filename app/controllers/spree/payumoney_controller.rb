@@ -1,3 +1,4 @@
+require 'byebug'
 module Spree
   class PayumoneyController < StoreController
     protect_from_forgery only: :index
@@ -6,7 +7,7 @@ module Spree
     def index
       @surl = payumoney_confirm_url
       @furl = payumoney_cancel_url
-      
+      byebug
       payment_method = Spree::PaymentMethod.find(params[:payment_method_id])
       
       @service_url = payment_method.provider.service_url
